@@ -5,6 +5,12 @@ html, body, #map-container {
     font-family: sans-serif;
   }
 
+
+  #map-container{
+    position:absolute;
+    z-index:1;
+    top:0; bottom:0;
+}
   .ol-popup {
     position: absolute;
     background-color: white;
