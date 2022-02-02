@@ -42,7 +42,7 @@ const closer = document.getElementById('popup-closer');
 let geojson_layer = new ol.layer.Vector({
   source: new ol.source.Vector({
     format: new ol.format.GeoJSON(),
-    url: './file.geojson',
+    url: './Teniszpalyak.geojson',
 }),style: styleFunction
 });
 
