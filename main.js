@@ -3,7 +3,7 @@ let styles = {
       image: new ol.style.Circle({
           radius: 8,
           fill: new ol.style.Fill({
-              color: [255, 255, 255, 0.3]
+              color: [255, 255, 255, 0.8]
           }),
           stroke: new ol.style.Stroke({color: '#cb1d1d', width: 2})
       })
@@ -11,14 +11,14 @@ let styles = {
   'LineString': [new ol.style.Style({
       stroke: new ol.style.Stroke({
           color: 'green',
-          width: 1
+          width: 41
       })
   })],
   'Polygon': [new ol.style.Style({
       stroke: new ol.style.Stroke({
           color: 'blue',
           lineDash: [4],
-          width: 3
+          width: 4
       }),
       fill: new ol.style.Fill({
           color: 'rgba(0, 0, 255, 0.1)'
@@ -30,7 +30,7 @@ let styles = {
           width: 2
       }),
       fill: new ol.style.Fill({
-          color: 'rgba(255,0,0,0.2)'
+          color: 'rgba(255,0,0,0.8)'
       })
   })]
 };
@@ -95,8 +95,17 @@ x.on('click', function(evt){
       var geometry = feature.getGeometry();
       var coord = geometry.getCoordinates();
       
+      
       var content = '<h3>' + feature.get('name') + '</h3>';
-      content += '<h5>' + feature.get('description') + '</h5>';
+      content += '<h5>' + 'Pálya árak: '+ feature.get('description') + '</h5>';
+      content += '<h5>' + 'Páya típusa: '+ feature.get('surface') + '</h5>';
+      content += '<h5>' + 'Weboldal: '+ feature.get('website') + '</h5>';
+      content += '<h5>' + 'Telefonszám: '+ feature.get('phone') + '</h5>';
+      content += '<h5>' + 'Nyitvatartási idő: '+ feature.get('opening_hours') + '</h5>';
+      content += '<h5>' + 'Város '+ feature.get('city') + '</h5>';
+      content += '<h5>' + 'Cím: '+ feature.get('address') + '</h5>';
+      content += '<h5>' + 'Email:  '+ feature.get('email') + '</h5>';
+      content += '<h5>' + 'Pályák darabszáma: '+ feature.get('count') + '</h5>';
       
       content_element.innerHTML = content;
       overlay.setPosition(coord);
