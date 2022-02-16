@@ -99,7 +99,7 @@ x.on('click', function(evt){
       var content = '<h3>' + feature.get('name') + '</h3>';
       content += '<h5>' + 'Pálya árak: '+ feature.get('description') + '</h5>';
       content += '<h5>' + 'Páya típusa: '+ feature.get('surface') + '</h5>';
-      content += '<h5>' + 'Weboldal: '+ '<a href=' + feature.get('website') +'>' + '</a>' + '</h5>';
+      content += '<h5>' + 'Weboldal: '+ '<a href=' + feature.get('website') +'>' + feature.get('website')+ '</a>' + '</h5>';
       content += '<h5>' + 'Telefonszám: '+ feature.get('phone') + '</h5>';
       content += '<h5>' + 'Nyitvatartási idő: '+ feature.get('opening_hours') + '</h5>';
       content += '<h5>' + 'Város '+ feature.get('city') + '</h5>';
