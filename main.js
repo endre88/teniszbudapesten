@@ -35,11 +35,11 @@ let styles = {
   })]
 };
 
-let style = new ol.style.Style({
+/*let style = new ol.style.Style({
 image: new ol.style.Icon({
-    src: "styles/transport_aerodrome.svg"
+    src: "310075.svg"
 })
-});
+});*/
 
 const container = document.getElementById('popup');
 const content_element = document.getElementById('popup-content');
