@@ -35,12 +35,6 @@ let styles = {
   })]
 };
 
-/*let style = new ol.style.Style({
-image: new ol.style.Icon({
-    src: "310075.svg"
-})
-});*/
-
 const container = document.getElementById('popup');
 const content_element = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
