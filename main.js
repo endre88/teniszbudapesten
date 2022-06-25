@@ -78,6 +78,7 @@ let x = new ol.Map({
   ],
     overlays: [overlay],
     interactions: ol.interaction.defaults({
+      onFocusOnly:true,
       doubleClickZoom: true,
       dragPan: true
     }),
