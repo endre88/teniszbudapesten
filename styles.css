@@ -7,7 +7,7 @@ html, body, #map-container {
 
 
   #map-container{
-    height:50em;
+    position:absolute;
     z-index:1;
     top:0; bottom:0;
 }
