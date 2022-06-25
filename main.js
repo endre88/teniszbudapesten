@@ -118,7 +118,7 @@ x.on('click', function(evt){
       content += '<h5>' + '<p class="data-label">Email:  </p>'+  '<p class="data">'+feature.get('email') + '</p></h5>';
       content += '<h5>' + '<p class="data-label">Város: </p>'+  '<p class="data">'+feature.get('city') + '</p></h5>';
       content += '<h5>' + '<p class="data-label">Cím: </p>'+  '<p class="data">'+feature.get('address') + '</p></h5>';
-      content += '<h5>' + '<p class="data-label">Páya típusa: </p>'+  '<p class="data">'+feature.get('surface') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Pálya típusa: </p>'+  '<p class="data">'+feature.get('surface') + '</p></h5>';
       content += '<h5>' + '<p class="data-label">Pályák darabszáma: </p>'+  '<p class="data">'+feature.get('count') + '</p></h5>';
       content_element.innerHTML = content;
       overlay.setPosition(coord);
