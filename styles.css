@@ -1,15 +1,16 @@
 html, body, #map-container {
     margin: 0;
+    width: 100%;
+    height: 100%;
     font-family: sans-serif;
   }
-
-
-  #map-container{
-    position:absolute;
+#map-container{
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index:1;
-    top:0; bottom:0;
+    top:0; 
+    bottom:0;
 }
   .ol-popup {
     position: absolute;
@@ -74,7 +75,6 @@ h5{
   max-width:15em;
   min-width:20em;
   padding:0.2em;
-
   vertical-align:middle;
 }
 .data-label{
@@ -91,5 +91,5 @@ h5:hover{
 }
 
 .ol-zoom, .ol-full-screen, .ol-attribution{
-  font-size:4em !important;
+  font-size:2em;
 }
