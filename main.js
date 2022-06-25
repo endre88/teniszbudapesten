@@ -79,14 +79,8 @@ let x = new ol.Map({
     overlays: [overlay],
     interactions: ol.interaction.defaults({
       doubleClickZoom: true,
-      dragAndDrop: true,
-      dragPan: true,
-      keyboardPan: true,
-      keyboardZoom: true,
-      mouseWheelZoom: true,
-      pointer: true,
-      select: true}),
-
+      dragPan: true
+    }),
     view: new ol.View({
       center: ([2129201.0509001324, 6025841.644010644]),
       zoom: 12,
