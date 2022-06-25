@@ -1,16 +1,24 @@
-let styles = {
+const styles = {
   'Point': [new ol.style.Style({
-      image: new ol.style.Circle({
-          radius: 8,
+     /* image: new ol.style.Circle({
+          radius: 6,
           fill: new ol.style.Fill({
               color: [255, 255, 255, 0.8]
           }),
-          stroke: new ol.style.Stroke({color: '#cb1d1d', width: 2})
-      })
+          stroke: new ol.style.Stroke({color: '#cb1d1d', width: 1})
+      })*/
+      image: new ol.style.Icon({
+          fill:'#1111ff',
+          anchor: [1, 1],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'fraction',
+          scale: 0.019,
+          src: '310075.svg'
+    })
   })],
   'LineString': [new ol.style.Style({
       stroke: new ol.style.Stroke({
-          color: 'green',
+          color: '#fff',
           width: 41
       })
   })],
@@ -39,11 +47,16 @@ const container = document.getElementById('popup');
 const content_element = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
 
+const styleFunction = function(feature, resolution) {
+  return styles[feature.getGeometry().getType()];
+};
+
 let geojson_layer = new ol.layer.Vector({
   source: new ol.source.Vector({
     format: new ol.format.GeoJSON(),
-    url: './Teniszpalyak.geojson',
-}),style: styleFunction
+    url: './Teniszpalyak.geojson'
+  }),
+  style: styleFunction
 });
 
 const overlay = new ol.Overlay({
@@ -65,62 +78,55 @@ let x = new ol.Map({
   ],
     overlays: [overlay],
     view: new ol.View({
-      center: ([2119201.0509001324, 6020841.644010644]),
-      zoom: 11,
+      center: ([2129201.0509001324, 6025841.644010644]),
+      zoom: 12,
       maxZoom:18,
       minZoom:10,
       extent: [762958.7313602014,5310108.422259997,3501412.7172102197,6576731.688082888]
     })
   });
 
-var styleFunction = function(feature, resolution) {
-    return styles[feature.getGeometry().getType()];
-};
 
-var fullscreen = new ol.control.FullScreen();
+
+const fullscreen = new ol.control.FullScreen();
 x.addControl(fullscreen);
   
+
 closer.onclick = function() {
+  overlay.setPosition(undefined);
+  container.blur();
+  return false;
+};
+x.on('click',function() {
   overlay.setPosition(undefined);
   closer.blur();
   return false;
-};
+});
 
 x.on('click', function(evt){
-  var feature = x.forEachFeatureAtPixel(evt.pixel,
+  let feature = x.forEachFeatureAtPixel(evt.pixel,
     function(feature, layer) {
       return feature;
     });
   if (feature) {
-      var geometry = feature.getGeometry();
-      var coord = geometry.getCoordinates();
-      
-      
-      var content = '<h3>' + feature.get('name') + '</h3>';
-      content += '<h5>' + 'Pálya árak: '+ feature.get('description') + '</h5>';
-      content += '<h5>' + 'Telefonszám: '+ feature.get('phone') + '</h5>';
-      content += '<h5>' + 'Nyitvatartási idő: '+ feature.get('opening_hours') + '</h5>';
-      content += '<h5>' + 'Weboldal: '+ feature.get('website') + '</h5>';
-      content += '<h5>' + 'Email:  '+ feature.get('email') + '</h5>';
-      content += '<h5>' + 'Város: '+ feature.get('city') + '</h5>';
-      content += '<h5>' + 'Cím: '+ feature.get('address') + '</h5>';
-      content += '<h5>' + 'Páya típusa: '+ feature.get('surface') + '</h5>';
-      content += '<h5>' + 'Pályák darabszáma: '+ feature.get('count') + '</h5>';
-      
+      let geometry = feature.getGeometry();
+      let coord = geometry.getCoordinates();
+      let content = ' <a target="_blank" href=' + feature.get('website') +'><h3>' + feature.get('name') + '</h3></a>';
+      content += '<h5>' + '<p class="data-label">Pálya árak: </p>'+ '<p class="data">'+ feature.get('description') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Telefonszám: </p>'+  '<p class="data">'+feature.get('phone') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Nyitvatartási idő: </p>'+  '<p class="data">'+feature.get('opening_hours') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Email:  </p>'+  '<p class="data">'+feature.get('email') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Város: </p>'+  '<p class="data">'+feature.get('city') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Cím: </p>'+  '<p class="data">'+feature.get('address') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Páya típusa: </p>'+  '<p class="data">'+feature.get('surface') + '</p></h5>';
+      content += '<h5>' + '<p class="data-label">Pályák darabszáma: </p>'+  '<p class="data">'+feature.get('count') + '</p></h5>';
       content_element.innerHTML = content;
       overlay.setPosition(coord);
-      
-      console.info(feature.getProperties());
   }
 });
 x.on('pointermove', function(e) {
   if (e.dragging) return;
-     
-  var pixel = x.getEventPixel(e.originalEvent);
-  var hit = x.hasFeatureAtPixel(pixel);
-  
+  let pixel = x.getEventPixel(e.originalEvent);
+  let hit = x.hasFeatureAtPixel(pixel);
   x.getViewport().style.cursor = hit ? 'pointer' : '';
 });
-
-
-
