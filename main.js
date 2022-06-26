@@ -1,5 +1,3 @@
-window.onload=init;
-function init(){
 const styles = {
   'Point': [new ol.style.Style({
      /* image: new ol.style.Circle({
@@ -44,15 +42,17 @@ const styles = {
       })
   })]
 };
+
 const container = document.getElementById('popup');
 const content_element = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
 
-const styleFunction = function(feature) {
-  return styles[feature.getGeometry().getType()];
+const styleFunction = function(feature, resolution) {
+  if (feature.get('name') != null) { //ha null a név  mező tehát még nincs kitöltve akkor nem töltődik be a pont
+  return styles[feature.getGeometry().getType()];}
 };
 
-let geojson_layer = new ol.layer.VectorImage({
+let geojson_layer = new ol.layer.Vector({
   source: new ol.source.Vector({
     format: new ol.format.GeoJSON(),
     url: './Teniszpalyak.geojson'
@@ -69,9 +69,10 @@ const overlay = new ol.Overlay({
   },
 });
 
-const map = new ol.Map({
+let x = new ol.Map({
     target: 'map-container',
-    layers: [new ol.layer.Tile({
+    layers: [
+      new ol.layer.Tile({
         source: new ol.source.OSM()
       }),
       geojson_layer    
@@ -94,10 +95,23 @@ const map = new ol.Map({
 
 
 const fullscreen = new ol.control.FullScreen();
-map.addControl(fullscreen);
+x.addControl(fullscreen);
+  
 
-map.on('click', function(evt){
-  let feature = map.forEachFeatureAtPixel(evt.pixel,function(feature, layer) {
+closer.onclick = function() {
+  overlay.setPosition(undefined);
+  container.blur();
+  return false;
+};
+x.on('click',function() {
+  overlay.setPosition(undefined);
+  closer.blur();
+  return false;
+});
+
+x.on('click', function(evt){
+  let feature = x.forEachFeatureAtPixel(evt.pixel,
+    function(feature, layer) {
       return feature;
     });
   if (feature) {
@@ -114,25 +128,11 @@ map.on('click', function(evt){
       content += '<h5>' + '<p class="data-label">Pályák darabszáma: </p>'+  '<p class="data">'+feature.get('count') + '</p></h5>';
       content_element.innerHTML = content;
       overlay.setPosition(coord);
-  } else {
-    overlay.setPosition(undefined);
-    closer.blur();
-    return false;
   }
-
 });
-
-closer.onclick = function() {
-  overlay.setPosition(undefined);
-  container.blur();
-  return false;
-};
-
-
-map.on('pointermove', function(e) {
+x.on('pointermove', function(e) {
   if (e.dragging) return;
-  let pixel = map.getEventPixel(e.originalEvent);
-  let hit = map.hasFeatureAtPixel(pixel);
-  map.getViewport().style.cursor = hit ? 'pointer' : '';
+  let pixel = x.getEventPixel(e.originalEvent);
+  let hit = x.hasFeatureAtPixel(pixel);
+  x.getViewport().style.cursor = hit ? 'pointer' : '';
 });
-}
