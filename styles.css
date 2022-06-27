@@ -1,3 +1,4 @@
+@media (min-width: 600px) {
 html, body, #map-container {
     margin: 0;
     width: 100%;
@@ -97,6 +98,10 @@ h5:hover{
   font-size:3em;
 }
 
+}
+
+
+
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
@@ -178,7 +183,4 @@ h5{
 h5:hover{
   background-color: #dad6d6;
 }
-
-
-
 }
