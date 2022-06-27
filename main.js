@@ -126,8 +126,8 @@ map.on('click', function(evt){
       overlay.setPosition(coord);}
       else {
         overlay.setPosition(undefined);
-      closer.blur();
-      return false;
+        closer.blur();
+        return false;
       }
 });
 map.on('pointermove', function(e) {
