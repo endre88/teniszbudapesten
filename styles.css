@@ -93,6 +93,6 @@ h5:hover{
 .ol-zoom, .ol-full-screen, .ol-attribution{
   font-size:2em;
 }
-.ol-attribution li{
+.ol-attribution ul li{
   font-size:3em;
 }
