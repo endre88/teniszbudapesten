@@ -90,7 +90,7 @@ h5:hover{
   background-color: #dad6d6;
 }
 
-.ol-zoom, .ol-full-screen, .ol-attribution{
+.ol-zoom, .ol-full-screen{
   font-size:2em;
 }
 .ol-attribution ul li{
