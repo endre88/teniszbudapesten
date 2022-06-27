@@ -103,11 +103,7 @@ closer.onclick = function() {
   container.blur();
   return false;
 };
-map.on('click',function() {
-  overlay.setPosition(undefined);
-  closer.blur();
-  return false;
-});
+
 
 map.on('click', function(evt){
   let feature = map.forEachFeatureAtPixel(evt.pixel,
@@ -127,7 +123,13 @@ map.on('click', function(evt){
       content += '<h5>' + '<p class="data-label">Pálya típusa: </p>'+  '<p class="data">'+feature.get('surface') + '</p></h5>';
       content += '<h5>' + '<p class="data-label">Pályák darabszáma: </p>'+  '<p class="data">'+feature.get('count') + '</p></h5>';
       content_element.innerHTML = content;
-      overlay.setPosition(coord);
+      overlay.setPosition(coord);}
+      else {
+        overlay.setPosition(undefined);
+      closer.blur();
+      return false;
+      }
+      
   }
 });
 map.on('pointermove', function(e) {
