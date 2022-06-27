@@ -129,8 +129,6 @@ map.on('click', function(evt){
       closer.blur();
       return false;
       }
-      
-  }
 });
 map.on('pointermove', function(e) {
   if (e.dragging) return;
