@@ -69,7 +69,7 @@ const overlay = new ol.Overlay({
   },
 });
 
-let x = new ol.Map({
+const map = new ol.Map({
     target: 'map-container',
     layers: [
       new ol.layer.Tile({
@@ -95,7 +95,7 @@ let x = new ol.Map({
 
 
 const fullscreen = new ol.control.FullScreen();
-x.addControl(fullscreen);
+map.addControl(fullscreen);
   
 
 closer.onclick = function() {
@@ -103,14 +103,14 @@ closer.onclick = function() {
   container.blur();
   return false;
 };
-x.on('click',function() {
+map.on('click',function() {
   overlay.setPosition(undefined);
   closer.blur();
   return false;
 });
 
-x.on('click', function(evt){
-  let feature = x.forEachFeatureAtPixel(evt.pixel,
+map.on('click', function(evt){
+  let feature = map.forEachFeatureAtPixel(evt.pixel,
     function(feature, layer) {
       return feature;
     });
@@ -130,9 +130,9 @@ x.on('click', function(evt){
       overlay.setPosition(coord);
   }
 });
-x.on('pointermove', function(e) {
+map.on('pointermove', function(e) {
   if (e.dragging) return;
-  let pixel = x.getEventPixel(e.originalEvent);
-  let hit = x.hasFeatureAtPixel(pixel);
-  x.getViewport().style.cursor = hit ? 'pointer' : '';
+  let pixel = map.getEventPixel(e.originalEvent);
+  let hit = map.hasFeatureAtPixel(pixel);
+  map.getViewport().style.cursor = hit ? 'pointer' : '';
 });
