@@ -48,11 +48,11 @@ const content_element = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
 
 const styleFunction = function(feature, resolution) {
-  if (feature.get('name')) { //ha null a név  mező tehát még nincs kitöltve akkor nem töltődik be a pont
+  if (feature.get('name')) { //ha false a név  mező tehát nincs kitöltve akkor nem töltődik be a geometria egyáltalán
   return styles[feature.getGeometry().getType()];}
 };
 
-let geojson_layer = new ol.layer.Vector({
+const geojson_layer = new ol.layer.Vector({
   source: new ol.source.Vector({
     format: new ol.format.GeoJSON(),
     url: './Teniszpalyak.geojson'
