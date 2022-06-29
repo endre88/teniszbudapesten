@@ -98,21 +98,3 @@ h5:hover{
   font-size:3em;
 }
 }
-
-
-@media (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-  .ol-popup {
-    position: absolute;
-    background-color: #f0efe1;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    padding: 15px;
-    border-radius: 20px;
-    border: 1px solid #cccccc;
-    bottom: 12px;
-    left: -50px;
-    min-width: 30em;
-  }
-}
