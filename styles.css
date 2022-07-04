@@ -1,13 +1,13 @@
 html, body, #map-container {
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: sans-serif;
 }
-#map-container{
+#map-container {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index:1;
   top:0; 
   bottom:0;
@@ -145,7 +145,7 @@ html, body, #map-container {
         background-color: rgb(211, 224, 198);
         border-radius: 5px;
         color: #5c3e0b;
-        max-width:20em;
+        max-width:10em;
         min-width:15em;
         padding:0.2em;
         vertical-align:middle;
@@ -171,9 +171,19 @@ html, body, #map-container {
         cursor:pointer ;
       }
       .ol-zoom, .ol-full-screen{
-        font-size:2em;
+        font-size:1.6em;
       }
       .ol-attribution ul li{
-        font-size:3em;
+        font-size:2em;
       }
+      #map-container{
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        z-index:1;
+        top:0; 
+        bottom:0;
+        box-sizing: border-box; 
+      }
+      
     }
