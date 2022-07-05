@@ -150,8 +150,8 @@ html, body, #map-container {
         border-radius: 5px;
         color: #5c3e0b;
         font-size: 0.8em;
-        max-width:8em;
-        min-width:8em;
+        max-width:12em;
+        min-width:12em;
         padding:0.2em;
         vertical-align:middle;
       }
@@ -161,8 +161,8 @@ html, body, #map-container {
         color:#0e1169;
         font-size: 0.8em;
         margin-right:1em;
-        max-width:12em;
-        min-width:12em;
+        max-width:8em;
+        min-width:8em;
         padding:0.2em;
         vertical-align:middle;
       }
