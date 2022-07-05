@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; 
+}
 html, body, #map-container {
   margin: 0;
   width: 100vw;
@@ -183,7 +186,6 @@ html, body, #map-container {
         z-index:1;
         top:0; 
         bottom:0;
-        box-sizing: border-box; 
       }
       
     }
