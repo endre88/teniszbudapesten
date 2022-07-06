@@ -104,12 +104,12 @@ html, body, #map-container {
   @media (max-width: 600px) {
       .ol-popup {
         position: absolute;
-        background-color: red;
+        background-color: rgb(245, 245, 245);
         box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-        padding: 15px;
+        padding: 10px;
         border-radius: 20px;
         border: 1px solid #cccccc;
-        bottom: 12px;
+        bottom: 5px;
         left: -50px;
         min-width: 20em;
         max-width: 20em;
@@ -168,21 +168,21 @@ html, body, #map-container {
       }
       p{
         display:inline-block;
-        margin: 5px 0 5px 0;
+        margin: 3px 0 3px 0;
       }
       h3{
         color:#1111ff;
         text-align: center;
-        margin-top:1.2em;
+        margin-top:1em;
         cursor:pointer;
-        font-size: 1.2em;
+        font-size: 10em;
 
       }
       .ol-zoom, .ol-full-screen{
-        font-size:1.6em;
+        font-size:1.4em;
       }
       .ol-attribution ul li{
-        font-size:2em;
+        font-size:1.5em;
       }
       #map-container{
         position: absolute;
