@@ -150,9 +150,9 @@ html, body, #map-container {
         border-radius: 5px;
         color: #5c3e0b;
         font-size: 0.8em;
-        max-width:12em;
-        min-width:12em;
-        padding:0.2em;
+        max-width:14em;
+        min-width:14em;
+        padding:0.1em;
         vertical-align:middle;
       }
       .data-label{
@@ -160,10 +160,10 @@ html, body, #map-container {
         border-radius: 5px;
         color:#0e1169;
         font-size: 0.8em;
-        margin-right:1em;
+        margin-right:0.5em;
         max-width:8em;
         min-width:8em;
-        padding:0.2em;
+        padding:0.1em;
         vertical-align:middle;
       }
       p{
