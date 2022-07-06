@@ -175,7 +175,7 @@ html, body, #map-container {
         text-align: center;
         margin-top:1em;
         cursor:pointer;
-        font-size: 10em;
+        font-size: 1em;
 
       }
       .ol-zoom, .ol-full-screen{
