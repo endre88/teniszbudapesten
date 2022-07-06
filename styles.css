@@ -145,6 +145,12 @@ html, body, #map-container {
       .ol-popup-closer:after {
         content: "✖";
       }
+      #popup-content{
+        margin:0;
+        padding:0;
+      }
+
+
       .data{
         background-color: rgb(211, 224, 198);
         border-radius: 5px;
