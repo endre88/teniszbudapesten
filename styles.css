@@ -174,8 +174,9 @@ html, body, #map-container {
         vertical-align:middle;
       }
       #popup-content h5{
-        /*display:inline-block;*/
-        margin: 3px 0 3px 0;
+        display:inline-block;
+        margin: 0;
+        border-radius: 5px;
       }
       h3{
         color:#1111ff;
@@ -183,10 +184,6 @@ html, body, #map-container {
         margin-top:1em;
         cursor:pointer;
         font-size: 1em;
-      }
-      h5{
-        margin: 1px 0 1px 0;
-        border-radius: 5px;
       }
 
       .ol-zoom, .ol-full-screen{
