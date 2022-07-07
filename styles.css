@@ -174,7 +174,7 @@ html, body, #map-container {
         vertical-align:middle;
       }
       #popup-content h5{
-        display:inline-block;
+        /*display:inline-block;*/
         margin: 3px 0 3px 0;
       }
       h3{
