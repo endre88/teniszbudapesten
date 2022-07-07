@@ -48,7 +48,7 @@ const content_element = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
 
 const styleFunction = function(feature, resolution) {
-  if (feature.get('name')) { //ha false a név  mező tehát nincs kitöltve akkor nem töltődik be a geometria egyáltalán
+  if (feature.get('name') && feature.get('address')) { //ha false a név  mező tehát nincs kitöltve akkor nem töltődik be a geometria egyáltalán
   return styles[feature.getGeometry().getType()];}
 };
 
