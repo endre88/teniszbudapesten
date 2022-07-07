@@ -173,7 +173,7 @@ html, body, #map-container {
         padding:0.1em;
         vertical-align:middle;
       }
-      #popup-content p{
+      #popup-content h5{
         display:inline-block;
         margin: 3px 0 3px 0;
       }
