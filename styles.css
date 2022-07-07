@@ -101,7 +101,8 @@ html, body, #map-container {
   }
   
   /* ---- Mobil nézet -------*/
-  @media (max-width: 600px) {
+  
+@media (max-width: 600px) {
       .ol-popup {
         position: absolute;
         background-color: rgb(245, 245, 245);
@@ -156,7 +157,6 @@ html, body, #map-container {
         border-radius: 5px;
         color: #5c3e0b;
         font-size: 0.8em;
-        margin-right:0;
         max-width:14em;
         min-width:14em;
         padding:0.1em;
@@ -173,7 +173,7 @@ html, body, #map-container {
         padding:0.1em;
         vertical-align:middle;
       }
-      p{
+      #popup-content p{
         display:inline-block;
         margin: 3px 0 3px 0;
       }
