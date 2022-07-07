@@ -156,6 +156,7 @@ html, body, #map-container {
         border-radius: 5px;
         color: #5c3e0b;
         font-size: 0.8em;
+        margin-right:0;
         max-width:14em;
         min-width:14em;
         padding:0.1em;
