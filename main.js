@@ -107,7 +107,6 @@ closer.onclick = function() {
 
 map.on('click', function(evt){
   //document.body.webkitRequestFullscreen();
-  //document.body.requestFullscreen();
   let feature = map.forEachFeatureAtPixel(evt.pixel,
     function(feature, layer) {
       return feature;
