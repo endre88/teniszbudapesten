@@ -1,7 +1,9 @@
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
-html, body, #map-container {
+html,
+body,
+#map-container {
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -11,193 +13,194 @@ html, body, #map-container {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  z-index:1;
-  top:0; 
-  bottom:0;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
 }
 
 /* ---- Asztali nézet -------*/
 
 @media (min-width: 601px) {
-    .ol-popup {
-      position: absolute;
-      background-color: #f0efe1;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-      padding: 15px;
-      border-radius: 20px;
-      border: 1px solid #cccccc;
-      bottom: 12px;
-      left: -50px;
-      min-width: 30em;
-    }
-    .ol-popup:after, .ol-popup:before {
-      top: 100%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-    }
-    .ol-popup:after {
-      border-top-color: white;
-      border-width: 10px;
-      left: 48px;
-      margin-left: -10px;
-    }
-    .ol-popup:before {
-      border-top-color: #cccccc;
-      border-width: 11px;
-      left: 48px;
-      margin-left: -11px;
-    }
-    .ol-popup-closer {
-      text-decoration: none;
-      position: absolute;
-      top: 0.2em;
-      right: 0.6em;
-      font-size: 1.5em;
-    }
-    .ol-popup-closer:after {
-      content: "✖";
-    }
-  h3{
-    color:#1111ff;
-    text-align: center;
-    margin-top:1.2em;
-    cursor:pointer ;
+  .ol-popup {
+    position: absolute;
+    background-color: #f0efe1;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 30em;
   }
-  p{
-    display:inline-block;
+  .ol-popup:after,
+  .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+  }
+  .ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+  }
+  .ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 0.2em;
+    right: 0.6em;
+    font-size: 1.5em;
+  }
+  .ol-popup-closer:after {
+    content: "✖";
+  }
+  h3 {
+    color: #1111ff;
+    text-align: center;
+    margin-top: 1.2em;
+    cursor: pointer;
+  }
+  p {
+    display: inline-block;
     margin: 5px 0 5px 0;
   }
-  h5{
+  h5 {
     margin: 3px 0 3px 0;
     border-radius: 5px;
   }
-  .data{
+  .data {
     background-color: rgb(211, 224, 198);
     border-radius: 5px;
     color: #5c3e0b;
-    max-width:15em;
-    min-width:20em;
-    padding:0.2em;
-    vertical-align:middle;
+    max-width: 15em;
+    min-width: 20em;
+    padding: 0.2em;
+    vertical-align: middle;
   }
-  .data-label{
+  .data-label {
     background-color: rgb(243, 219, 199);
     border-radius: 5px;
-    color:#0e1169;
-    margin-right:1em;
-    min-width:10em;
-    padding:0.2em;
-    vertical-align:middle;
+    color: #0e1169;
+    margin-right: 1em;
+    min-width: 10em;
+    padding: 0.2em;
+    vertical-align: middle;
   }
-  h5:hover{
+  h5:hover {
     background-color: #dad6d6;
   }
-  
- 
-  }
-  
-  /* ---- Mobil nézet -------*/
-  
+}
+
+/* ---- Mobil nézet -------*/
+
 @media (max-width: 600px) {
-      .ol-popup {
-        position: absolute;
-        background-color: rgb(245, 245, 245);
-        box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-        padding: 10px;
-        border-radius: 20px;
-        border: 1px solid #cccccc;
-        bottom: 5px;
-        left: -50px;
-        min-width: 20em;
-        max-width: 20em;
-      }
-      .ol-popup:after, .ol-popup:before {
-        top: 100%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-      }
-      .ol-popup:after {
-        border-top-color: white;
-        border-width: 10px;
-        left: 48px;
-        margin-left: -10px;
-      }
-      .ol-popup:before {
-        border-top-color: #cccccc;
-        border-width: 11px;
-        left: 48px;
-        margin-left: -11px;
-      }
-      .ol-popup-closer {
-        text-decoration: none;
-        position: absolute;
-        top: 0.2em;
-        right: 0.6em;
-        font-size: 1.5em;
-      }
-      .ol-popup-closer:after {
-        content: "✖";
-      }
-      #popup-content{
-        margin:0;
-        padding:0;
-      }
-      .data{
-        background-color: rgb(211, 224, 198);
-        border-radius: 5px;
-        color: #5c3e0b;
-        font-size: 0.8em;
-        max-width:14em;
-        min-width:14em;
-        padding:0.1em;
-        vertical-align:middle;
-      }
-      .data-label{
-        background-color: rgb(243, 219, 199);
-        border-radius: 5px;
-        color:#0e1169;
-        font-size: 0.8em;
-        margin-right:0.5em;
-        max-width:8em;
-        min-width:8em;
-        padding:0.1em;
-        vertical-align:middle;
-      }
-      #popup-content h5{
-        display:inline-block;
-        margin: 0;
-        border-radius: 5px;
-      }
-      h3{
-        color:#1111ff;
-        text-align: center;
-        margin-top:1em;
-        cursor:pointer;
-        font-size: 1em;
-      }
-      p{
-        display:inline-block;
-      }
-      .ol-zoom, .ol-full-screen{
-        font-size:1.4em;
-      }
-      .ol-attribution ul li{
-        font-size:1.5em;
-      }
-      #map-container{
-        position: absolute;
-        width: 100vw;
-        height: 100%;
-        z-index:1;
-        top:0; 
-        bottom:0;
-      }
-    }
+  .ol-popup {
+    position: absolute;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    bottom: 5px;
+    left: -50px;
+    min-width: 20em;
+    max-width: 20em;
+  }
+  .ol-popup:after,
+  .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+  }
+  .ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+  }
+  .ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 0.2em;
+    right: 0.6em;
+    font-size: 1.5em;
+  }
+  .ol-popup-closer:after {
+    content: "✖";
+  }
+  #popup-content {
+    margin: 0;
+    padding: 0;
+  }
+  .data {
+    background-color: rgb(211, 224, 198);
+    border-radius: 5px;
+    color: #5c3e0b;
+    font-size: 0.8em;
+    max-width: 14em;
+    min-width: 14em;
+    padding: 0.1em;
+    vertical-align: middle;
+  }
+  .data-label {
+    background-color: rgb(243, 219, 199);
+    border-radius: 5px;
+    color: #0e1169;
+    font-size: 0.8em;
+    margin-right: 0.5em;
+    max-width: 8em;
+    min-width: 8em;
+    padding: 0.1em;
+    vertical-align: middle;
+  }
+  #popup-content h5 {
+    display: inline-block;
+    margin: 0;
+    border-radius: 5px;
+  }
+  h3 {
+    color: #1111ff;
+    text-align: center;
+    margin-top: 1em;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  p {
+    display: inline-block;
+  }
+  .ol-zoom,
+  .ol-full-screen {
+    font-size: 1.4em;
+  }
+  .ol-attribution ul li {
+    font-size: 1.5em;
+  }
+  #map-container {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+  }
+}
